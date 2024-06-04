@@ -3,12 +3,11 @@ export const analizeArray = (array) => {
 
     return array.reduce(
         (mem, curr, index) => {
-            mem.average = !mem.average ? curr : mem.average + curr;
-            mem.min = !mem.min ? curr : mem.min < curr ? mem.min : curr;
-            mem.max = !mem.max ? curr : mem.max > curr ? mem.max : curr;
-
-            if (index === mem.length - 1)
-                mem.average = mem.average / mem.length;
+            mem.average = index !== mem.length - 1 
+                ? (mem.average || 0 ) + curr 
+                : (mem.average + curr) / mem.length;
+            mem.min = Math.min( mem.min || curr, curr );
+            mem.max = Math.max( mem.max || curr, curr );
 
             return mem;
         },
