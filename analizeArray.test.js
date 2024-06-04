@@ -48,5 +48,5 @@ test('La longitud es un número y es correcta', () => {
     expect(typeof analizeArray([1,2,3,4,5]).length === 'number').toBe(true)
     expect(analizeArray([1,2]).length).toBe(2)
     expect(analizeArray([]).length).toBe(0)
-    expect(analizeArray([-1,-2,-3,-4,-5]).length).toBe(-5)
+    expect(analizeArray([-1,-2,-3,-4,-5]).length).toBe(5)
 })
