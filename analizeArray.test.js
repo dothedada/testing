@@ -4,10 +4,10 @@ test('Devuelve un objeto con las llaves Average, Min, Max, Length', () => {
     const keys = new Set(Object.keys(analizeArray([])))
 
     expect(keys.size).toBe(4)
-    expect(keys.has('average')).toBe('true')
-    expect(keys.has('min')).toBe('true')
-    expect(keys.has('max')).toBe('true')
-    expect(keys.has('length')).toBe('true')
+    expect(keys.has('average')).toBe(true)
+    expect(keys.has('min')).toBe(true)
+    expect(keys.has('max')).toBe(true)
+    expect(keys.has('length')).toBe(true)
 })
 
 test('Si el array está vacío, retorna todos los valores como NULL', () => {
