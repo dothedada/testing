@@ -10,13 +10,13 @@ test('Devuelve un objeto con las llaves Average, Min, Max, Length', () => {
     expect(keys.has('length')).toBe(true)
 })
 
-test('Si el array está vacío, retorna todos los valores como NULL', () => {
+test('Si el array está vacío, retorna todos los valores como NULL, menos lenght', () => {
     const object = analizeArray([])
 
     expect(object['average']).toBeNull()
     expect(object['min']).toBeNull()
     expect(object['max']).toBeNull()
-    expect(object['length']).toBeNull()
+    expect(object['length']).toBe(0)
 })
 
 test('Si no se inrgesa ningún parámetro, retorna undefined', () => {
@@ -46,7 +46,7 @@ test('El minimo es un número, es correcto, incluyéndo números negativos', () 
 
 test('La longitud es un número y es correcta', () => {
     expect(typeof analizeArray([1,2,3,4,5]).length === 'number').toBe(true)
-    expect(analizeArray([1,2,3,4,5]).length).toBe(1)
-    expect(analizeArray([1,-2,3,-4,5]).length).toBe(-4)
+    expect(analizeArray([1,2]).length).toBe(2)
+    expect(analizeArray([]).length).toBe(0)
     expect(analizeArray([-1,-2,-3,-4,-5]).length).toBe(-5)
 })
